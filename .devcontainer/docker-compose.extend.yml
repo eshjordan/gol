@@ -1,0 +1,21 @@
+version: '3'
+services:
+  rust-dev:
+
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+
+    environment:
+      DISPLAY: "${DISPLAY}"
+
+    volumes:
+      - .:/workspace:cached
+
+    cap_add:
+      - SYS_PTRACE
+
+    security_opt:
+      - seccomp:unconfined
+    
+    command: /bin/sh -c "while sleep 1000; do :; done"

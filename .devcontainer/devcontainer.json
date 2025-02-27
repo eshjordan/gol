@@ -1,0 +1,7 @@
+{
+    "name": "Rust GOL Development",
+    "dockerComposeFile": ["../docker-compose.yml", "docker-compose.extend.yml"],
+    "service": "rust-dev",
+    "workspaceFolder": "/workspace",
+    "shutdownAction": "stopCompose"
+}
